@@ -15,3 +15,5 @@ edition = "2018"
 [dependencies]
 tokio = {version = "*", features = ["full"]}
 serde = "*"
+serde-encrypt = "*"
+ron = "*"
