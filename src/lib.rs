@@ -1,13 +1,14 @@
 use serde::{Deserialize, Serialize};
 
 pub mod actor;
+pub mod deadletter;
 
 #[derive(Deserialize, Serialize)]
 pub enum Status {
     Idle = 0,
     Working = 1,
     Stopped = 2,
-    Terminated = 3,
+    Killed = 3,
     Dead = 4,
     Error,
 }
@@ -18,7 +19,7 @@ impl From<u8> for Status {
             0 => Status::Idle,
             1 => Status::Working,
             2 => Status::Stopped,
-            3 => Status::Terminated,
+            3 => Status::Killed,
             4 => Status::Dead,
             _ => Status::Error,
         }
