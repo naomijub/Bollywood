@@ -49,10 +49,6 @@ impl<'b, T: DeserializeOwned> Actor<T> {
         self.msg.push_back(msg2);
     }
 
-    pub fn stop(&mut self) {
-        self.status = Status::Stopped
-    }
-
     pub fn execute(mut self) {
         if !self.priority.is_empty() {
             self.status = Status::Working;
